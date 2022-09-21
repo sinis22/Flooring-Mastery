@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
-import com.sg.flooringmastery.dao.Products.FlooringMasteryProductsDao;
-import com.sg.flooringmastery.dao.Products.FlooringMasteryProductsDaoFileImpl;
-import com.sg.flooringmastery.dto.Product;
+import dao.Products.FlooringMasteryProductsDao;
+import dao.Products.FlooringMasteryProductsDaoFileImpl;
+import dto.Product;
 import java.math.BigDecimal;
 import java.util.List;
 import org.junit.After;
@@ -17,13 +12,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- *
- * @author capta
- */
+
 public class FlooringMasteryProductsDaoTest {
 
-    private FlooringMasteryProductsDao productsDao = new FlooringMasteryProductsDaoFileImpl();
+    private final FlooringMasteryProductsDao productsDao = new FlooringMasteryProductsDaoFileImpl();
 
     public FlooringMasteryProductsDaoTest() {
     }
@@ -37,7 +29,7 @@ public class FlooringMasteryProductsDaoTest {
     }
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         List<Product> productList = productsDao.getAllProducts();
         for (Product product : productList) {
             productsDao.removeProduct(product);
@@ -49,7 +41,7 @@ public class FlooringMasteryProductsDaoTest {
     }
 
     @Test
-    public void testAddGetProduct() throws Exception {
+    public void testAddGetProduct() {
         Product product1 = new Product();
         product1.setProductType("Ceramic");
         product1.setCostPerSquareFoot(new BigDecimal(1.50));

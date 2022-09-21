@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
-import com.sg.flooringmastery.dao.Taxes.FlooringMasteryTaxesDao;
-import com.sg.flooringmastery.dao.Taxes.FlooringMasteryTaxesDaoFileImpl;
-import com.sg.flooringmastery.dto.Tax;
+import dao.Taxes.FlooringMasteryTaxesDao;
+import dao.Taxes.FlooringMasteryTaxesDaoFileImpl;
+import dto.Tax;
 import java.math.BigDecimal;
 import java.util.List;
 import org.junit.After;
@@ -17,13 +12,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- *
- * @author capta
- */
+
 public class FlooringMasteryTaxesDaoTest {
 
-    private FlooringMasteryTaxesDao taxesDao = new FlooringMasteryTaxesDaoFileImpl();
+    private final FlooringMasteryTaxesDao taxesDao = new FlooringMasteryTaxesDaoFileImpl();
 
     public FlooringMasteryTaxesDaoTest() {
     }
@@ -37,7 +29,7 @@ public class FlooringMasteryTaxesDaoTest {
     }
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         List<Tax> taxList = taxesDao.getAllTaxes();
         for (Tax tax : taxList) {
             taxesDao.removeTax(tax);
@@ -49,7 +41,7 @@ public class FlooringMasteryTaxesDaoTest {
     }
 
     @Test
-    public void testAddGetTax() throws Exception {
+    public void testAddGetTax() {
         Tax tax1 = new Tax();
         tax1.setState("VA");
         tax1.setTaxRate(new BigDecimal("5.30"));

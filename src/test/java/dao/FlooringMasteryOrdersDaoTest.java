@@ -1,9 +1,8 @@
-
 package dao;
 
-import com.sg.flooringmastery.dao.Orders.FlooringMasteryOrdersDao;
-import com.sg.flooringmastery.dao.Orders.FlooringMasteryOrdersDaoFileImpl;
-import com.sg.flooringmastery.dto.Order;
+import dao.Orders.FlooringMasteryOrdersDao;
+import dao.Orders.FlooringMasteryOrdersDaoFileImpl;
+import dto.Order;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -17,7 +16,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class FlooringMasteryOrdersDaoTest {
 
-    private FlooringMasteryOrdersDao ordersDao = new FlooringMasteryOrdersDaoFileImpl();
+    private final FlooringMasteryOrdersDao ordersDao = new FlooringMasteryOrdersDaoFileImpl();
 
     public FlooringMasteryOrdersDaoTest() {
     }
@@ -31,7 +30,7 @@ public class FlooringMasteryOrdersDaoTest {
     }
 
     @BeforeEach
-    public void setUp() throws Exception {
+    public void setUp() {
         List<Order> orderList = ordersDao.getAllOrders();
         for (Order order : orderList) {
             ordersDao.removeOrder(order);
@@ -43,7 +42,7 @@ public class FlooringMasteryOrdersDaoTest {
     }
 
     @Test
-    public void testAddGetOrder() throws Exception {
+    public void testAddGetOrder() {
         Order order1 = new Order();
         order1.setOrderNumber(1);
         order1.setOrderDate(LocalDate.parse("09/20/2022", DateTimeFormatter.ofPattern("MM/dd/yyyy")));

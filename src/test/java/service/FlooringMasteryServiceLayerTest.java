@@ -5,20 +5,17 @@
  */
 package service;
 
-import com.sg.flooringmastery.dao.Orders.FlooringMasteryOrdersDaoStubImpl;
-import com.sg.flooringmastery.dao.Products.FlooringMasteryProductsDaoStubImpl;
-import com.sg.flooringmastery.dao.Taxes.FlooringMasteryTaxesDaoStubImpl;
-import com.sg.flooringmastery.dto.Order;
-import com.sg.flooringmastery.dto.Product;
-import com.sg.flooringmastery.dto.Tax;
+import dao.Orders.FlooringMasteryOrdersDaoStubImpl;
+import dao.Products.FlooringMasteryProductsDaoStubImpl;
+import dao.Taxes.FlooringMasteryTaxesDaoStubImpl;
+import dto.Order;
+import dto.Product;
+import dto.Tax;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-import com.sg.flooringmastery.service.FlooringMasteryNoOrderExistsByDateException;
-import com.sg.flooringmastery.service.FlooringMasteryNoOrderExistsByOrderNumberAndByDateException;
-import com.sg.flooringmastery.service.FlooringMasteryServiceLayer;
 import junit.framework.Assert;
 import org.junit.After;
 import org.junit.AfterClass;

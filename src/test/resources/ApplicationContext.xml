@@ -16,13 +16,13 @@
           http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
     <!-- Bean definitions go here -->
-    <bean id="ordersDaoStub" class="com.sg.flooringmastery.dao.Orders.FlooringMasteryOrdersDaoStubImpl" />
+    <bean id="ordersDaoStub" class="dao.Orders.FlooringMasteryOrdersDaoStubImpl" />
     
-    <bean id="taxesDaoStub" class="com.sg.flooringmastery.dao.Taxes.FlooringMasteryTaxesDaoStubImpl" />
+    <bean id="taxesDaoStub" class="dao.Taxes.FlooringMasteryTaxesDaoStubImpl" />
     
-    <bean id="productsDaoStub" class="com.sg.flooringmastery.dao.Products.FlooringMasteryProductsDaoStubImpl" />
+    <bean id="productsDaoStub" class="dao.Products.FlooringMasteryProductsDaoStubImpl" />
     
-    <bean id="serviceLayer" class="com.sg.flooringmastery.service.FlooringMasteryServiceLayerImpl" >
+    <bean id="serviceLayer" class="service.FlooringMasteryServiceLayerImpl" >
         <constructor-arg ref="ordersDaoStub" />
         <constructor-arg ref="taxesDaoStub" />
         <constructor-arg ref="productsDaoStub" />

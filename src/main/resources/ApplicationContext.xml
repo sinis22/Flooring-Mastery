@@ -16,19 +16,19 @@
           http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
     <!-- Bean definitions go here -->
-    <bean id="userIO" class="com.sg.flooringmastery.ui.UserIOConsoleImpl" />
+    <bean id="userIO" class="ui.UserIOConsoleImpl" />
     
-    <bean id="view" class="com.sg.flooringmastery.ui.FlooringMasteryView">
+    <bean id="view" class="ui.FlooringMasteryView">
         <constructor-arg ref="userIO" />
     </bean>
     
-    <bean id="ordersDao" class="com.sg.flooringmastery.dao.Orders.FlooringMasteryOrdersDaoFileImpl" />
+    <bean id="ordersDao" class="dao.Orders.FlooringMasteryOrdersDaoFileImpl" />
     
-    <bean id="taxesDao" class="com.sg.flooringmastery.dao.Taxes.FlooringMasteryTaxesDaoFileImpl" />
+    <bean id="taxesDao" class="dao.Taxes.FlooringMasteryTaxesDaoFileImpl" />
     
-    <bean id="productsDao" class="com.sg.flooringmastery.dao.Products.FlooringMasteryProductsDaoFileImpl" />
+    <bean id="productsDao" class="dao.Products.FlooringMasteryProductsDaoFileImpl" />
     
-    <bean id="serviceLayer" class="com.sg.flooringmastery.service.FlooringMasteryServiceLayerImpl" >
+    <bean id="serviceLayer" class="service.FlooringMasteryServiceLayerImpl" >
         <constructor-arg ref="ordersDao"/>
         <constructor-arg ref="taxesDao"/>
         <constructor-arg ref="productsDao"/>
@@ -36,7 +36,7 @@
         
     </bean>
     
-    <bean id="controller" class="com.sg.flooringmastery.controller.FlooringMasteryController" >
+    <bean id="controller" class="controller.FlooringMasteryController" >
         <constructor-arg ref="serviceLayer"/>
         <constructor-arg ref="view"/>
     </bean>
